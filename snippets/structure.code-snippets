@@ -13,7 +13,7 @@
     "description": "Insert a presentation table for email layout."
   },
   "Email Padded Section": {
-    "prefix": "email-section-padded",
+    "prefix": ["email-section", "email-section-padded"],
     "body": [
       "<tr>",
       "  <td align=\"left\" valign=\"top\" class=\"mobile-padding\" style=\"padding:${1:20}px ${2:40}px;\">",
@@ -41,20 +41,68 @@
     ],
     "description": "Insert a one-pixel divider."
   },
-  "Email Two Columns": {
-    "prefix": "email-columns-2",
+  "Email Two Columns 50/50": {
+    "prefix": ["email-columns", "email-columns-2", "email-columns-5050"],
     "body": [
       "<table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">",
       "  <tr>",
-      "    <td width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\">",
+      "    <td dir=\"ltr\" width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:50%;\">",
       "      ${1:Column 1}",
       "    </td>",
-      "    <td width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\">",
+      "    <td dir=\"ltr\" width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:50%;\">",
       "      ${2:Column 2}",
       "    </td>",
       "  </tr>",
       "</table>"
     ],
-    "description": "Insert a basic 50/50 two-column layout that stacks on mobile."
+    "description": "Insert a 50/50 two-column layout that stacks on mobile."
+  },
+  "Email Two Columns 60/40": {
+    "prefix": "email-columns-6040",
+    "body": [
+      "<table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">",
+      "  <tr>",
+      "    <td dir=\"ltr\" width=\"60%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:60%;\">",
+      "      ${1:Column 1}",
+      "    </td>",
+      "    <td dir=\"ltr\" width=\"40%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:40%;\">",
+      "      ${2:Column 2}",
+      "    </td>",
+      "  </tr>",
+      "</table>"
+    ],
+    "description": "Insert a 60/40 two-column layout that stacks on mobile."
+  },
+  "Email Two Columns 40/60": {
+    "prefix": "email-columns-4060",
+    "body": [
+      "<table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">",
+      "  <tr>",
+      "    <td dir=\"ltr\" width=\"40%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:40%;\">",
+      "      ${1:Column 1}",
+      "    </td>",
+      "    <td dir=\"ltr\" width=\"60%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:60%;\">",
+      "      ${2:Column 2}",
+      "    </td>",
+      "  </tr>",
+      "</table>"
+    ],
+    "description": "Insert a 40/60 two-column layout that stacks on mobile."
+  },
+  "Email Two Columns Reverse Stack": {
+    "prefix": "email-columns-reverse",
+    "body": [
+      "<table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" dir=\"rtl\">",
+      "  <tr>",
+      "    <td dir=\"ltr\" width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:50%;\">",
+      "      ${2:Column 2}",
+      "    </td>",
+      "    <td dir=\"ltr\" width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\" style=\"width:50%;\">",
+      "      ${1:Column 1}",
+      "    </td>",
+      "  </tr>",
+      "</table>"
+    ],
+    "description": "Insert 50/50 columns that keep normal desktop order and reverse their stack order on mobile."
   }
 }
