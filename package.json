@@ -1,0 +1,216 @@
+{
+  "name": "email-dev-toolkit",
+  "displayName": "Email Dev Toolkit",
+  "description": "General-purpose snippets, generators, and validation utilities for robust responsive HTML email development.",
+  "version": "0.2.0",
+
+  "publisher": "nikhilthakur",
+  "author": "Nikhil Thakur",
+
+  "license": "SEE LICENSE IN LICENSE",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itgitnit2210/email-dev-toolkit.git"
+  },
+
+  "homepage": "https://github.com/itgitnit2210/email-dev-toolkit#readme",
+
+  "bugs": {
+    "url": "https://github.com/itgitnit2210/email-dev-toolkit/issues"
+  },
+
+  "pricing": "Free",
+
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "email",
+    "html email",
+    "responsive email",
+    "email development",
+    "email template",
+    "email snippets",
+    "email validation",
+    "outlook",
+    "mso",
+    "vml"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onCommand:emailDev.insertResponsiveTemplate",
+    "onCommand:emailDev.configureLayout",
+    "onCommand:emailDev.insertColumns",
+    "onCommand:emailDev.insertButton",
+    "onCommand:emailDev.insertResponsiveImage",
+    "onCommand:emailDev.validateCurrentEmail"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "emailDev.insertResponsiveTemplate",
+        "title": "Insert Responsive Email Template",
+        "category": "Email Dev"
+      },
+      {
+        "command": "emailDev.configureLayout",
+        "title": "Configure Layout",
+        "category": "Email Dev"
+      },
+      {
+        "command": "emailDev.insertColumns",
+        "title": "Insert Columns",
+        "category": "Email Dev"
+      },
+      {
+        "command": "emailDev.insertButton",
+        "title": "Insert Button",
+        "category": "Email Dev"
+      },
+      {
+        "command": "emailDev.insertResponsiveImage",
+        "title": "Insert Responsive Image",
+        "category": "Email Dev"
+      },
+      {
+        "command": "emailDev.validateCurrentEmail",
+        "title": "Validate Current Email",
+        "category": "Email Dev"
+      }
+    ],
+    "configuration": {
+      "title": "Email Dev Toolkit",
+      "properties": {
+        "emailDev.desktopWidth": {
+          "type": "number",
+          "default": 720,
+          "minimum": 320,
+          "maximum": 1200,
+          "description": "Maximum desktop email container width in pixels."
+        },
+        "emailDev.mobilePreviewWidth": {
+          "type": "number",
+          "default": 360,
+          "minimum": 280,
+          "maximum": 600,
+          "description": "Reference width for mobile preview and layout calculations. Production mobile width remains fluid."
+        },
+        "emailDev.desktopPadding": {
+          "type": "number",
+          "default": 40,
+          "minimum": 0,
+          "maximum": 160,
+          "description": "Default horizontal content padding on desktop in pixels."
+        },
+        "emailDev.mobilePadding": {
+          "type": "number",
+          "default": 20,
+          "minimum": 0,
+          "maximum": 80,
+          "description": "Default horizontal content padding on mobile in pixels."
+        },
+        "emailDev.mobileBreakpoint": {
+          "type": "number",
+          "default": 480,
+          "minimum": 320,
+          "maximum": 900,
+          "description": "Breakpoint used by generated responsive email CSS."
+        },
+        "emailDev.defaultBackground": {
+          "type": "string",
+          "default": "#ffffff",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "Default six-digit background color used by generated templates."
+        },
+        "emailDev.defaultFontFamily": {
+          "type": "string",
+          "default": "Arial, Helvetica, sans-serif",
+          "description": "Default font stack used by generated templates."
+        },
+        "emailDev.imageDirectory": {
+          "type": "string",
+          "default": "images",
+          "description": "Default relative image directory used by generators and snippets."
+        },
+        "emailDev.includeOutlookFallbacks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include conditional markup and VML fallbacks for email clients that require them."
+        }
+      }
+    },
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/structure.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/content.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/images.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/buttons.code-snippets"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/utilities.code-snippets"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "emailDev.insertResponsiveTemplate",
+          "when": "editorLangId == html"
+        },
+        {
+          "command": "emailDev.insertColumns",
+          "when": "editorLangId == html"
+        },
+        {
+          "command": "emailDev.insertButton",
+          "when": "editorLangId == html"
+        },
+        {
+          "command": "emailDev.insertResponsiveImage",
+          "when": "editorLangId == html"
+        },
+        {
+          "command": "emailDev.validateCurrentEmail",
+          "when": "editorLangId == html"
+        },
+        {
+          "command": "emailDev.configureLayout"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "check:syntax": "node scripts/check-syntax.js",
+    "check:snippets": "node scripts/validate-snippets.js",
+    "check:terminology": "node scripts/check-terminology.js",
+    "check": "npm run check:syntax && npm run check:snippets && npm run check:terminology",
+    "test": "node --test test/*.test.js",
+    "package": "npm run check && npm test && vsce package",
+    "package:skip-check": "vsce package"
+  },
+  "files": [
+    "src/**",
+    "snippets/**",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@vscode/vsce": "^3.9.2"
+  }
+}

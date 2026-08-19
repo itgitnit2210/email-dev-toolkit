@@ -1,0 +1,52 @@
+{
+  "Email Text": {
+    "prefix": "email-text",
+    "body": [
+      "<tr>",
+      "  <td align=\"left\" valign=\"top\" style=\"font-family:${1:Arial, Helvetica, sans-serif}; font-size:${2:16}px; line-height:${3:24}px; color:${4:#000000}; font-weight:normal; text-align:left; mso-line-height-rule:exactly; -webkit-text-size-adjust:none;\">",
+      "    ${5:Text goes here}",
+      "  </td>",
+      "</tr>"
+    ],
+    "description": "Insert an email-safe text row."
+  },
+  "Email Link": {
+    "prefix": "email-link",
+    "body": [
+      "<a href=\"${1:https://example.com}\" target=\"_blank\" title=\"${2:Link title}\" style=\"color:${3:#0000ee}; text-decoration:underline; font-family:inherit; font-size:inherit; line-height:inherit;\"><span style=\"color:inherit;\">${4:Link text}</span></a>"
+    ],
+    "description": "Insert a styled email link."
+  },
+  "Email Bullet": {
+    "prefix": "email-bullet",
+    "body": [
+      "<tr>",
+      "  <td align=\"left\" valign=\"top\">",
+      "    <table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">",
+      "      <tr>",
+      "        <td width=\"20\" align=\"left\" valign=\"top\" style=\"width:20px; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:24px; color:${1:#000000};\">&bull;</td>",
+      "        <td align=\"left\" valign=\"top\" style=\"font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:24px; color:${1:#000000}; mso-line-height-rule:exactly;\">${2:Bullet text}</td>",
+      "      </tr>",
+      "    </table>",
+      "  </td>",
+      "</tr>"
+    ],
+    "description": "Insert a table-based bullet row for predictable email rendering."
+  },
+  "Email Preheader": {
+    "prefix": "email-preheader",
+    "body": [
+      "<div class=\"preheader\" style=\"display:none; max-height:0; max-width:0; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all; font-size:1px; line-height:1px;\">",
+      "  ${1:Preview text goes here.}",
+      "</div>"
+    ],
+    "description": "Insert generic hidden preview text."
+  },
+  "Email Superscript": {
+    "prefix": "email-sup",
+    "body": [
+      "<sup style=\"font-size:${1:9}px; line-height:${2:9}px; vertical-align:text-top; mso-line-height-rule:exactly;\">${3:&reg;}</sup>"
+    ],
+    "description": "Insert email-safe superscript text."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "Email No Wrap Join": {
+    "prefix": "email-nowrap",
+    "body": [
+      "<span style=\"white-space:nowrap !important;\">${1:&zwj;&zwj;}</span>"
+    ],
+    "description": "Insert a no-wrap helper span."
+  },
+  "Email Mobile Hide": {
+    "prefix": "email-mobile-hide",
+    "body": [
+      "<div class=\"mobile-hide\">",
+      "  $0",
+      "</div>"
+    ],
+    "description": "Wrap content that should be hidden on mobile."
+  },
+  "Email Mobile Show": {
+    "prefix": "email-mobile-show",
+    "body": [
+      "<!--[if !mso]><!-->",
+      "<div class=\"mobile-show\" style=\"display:none; max-height:0; overflow:hidden;\">",
+      "  $0",
+      "</div>",
+      "<!--<![endif]-->"
+    ],
+    "description": "Wrap content that should only be shown on mobile."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "Email Simple Button": {
+    "prefix": "email-button-simple",
+    "body": [
+      "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\">",
+      "  <tr>",
+      "    <td align=\"center\" bgcolor=\"${1:#000000}\" style=\"background-color:${1:#000000}; border-radius:${2:0}px;\">",
+      "      <a href=\"${3:https://example.com}\" target=\"_blank\" title=\"${4:Learn more}\" style=\"display:inline-block; padding:${5:12}px ${6:24}px; color:${7:#ffffff}; font-family:Arial, Helvetica, sans-serif; font-size:${8:16}px; line-height:${9:20}px; font-weight:bold; text-align:center; text-decoration:none; border-radius:${2:0}px;\">${4:Learn more}</a>",
+      "    </td>",
+      "  </tr>",
+      "</table>"
+    ],
+    "description": "Insert a simple HTML button. Use Email Dev: Insert Button for configurable Outlook VML fallback."
+  }
+}

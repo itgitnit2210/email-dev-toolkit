@@ -1,0 +1,25 @@
+{
+  "Email Fluid Image": {
+    "prefix": "email-image-fluid",
+    "body": [
+      "<img src=\"${1:images/hero.jpg}\" width=\"${2:720}\" alt=\"${3:Descriptive image text}\" border=\"0\" class=\"fluid-image\" style=\"display:block; width:100%; max-width:${2:720}px; height:auto;\" />"
+    ],
+    "description": "Insert a fluid responsive image."
+  },
+  "Email Linked Image": {
+    "prefix": "email-image-link",
+    "body": [
+      "<a href=\"${1:https://example.com}\" target=\"_blank\" title=\"${2:Image link}\" style=\"display:block; border:0; text-decoration:none;\">",
+      "  <img src=\"${3:images/hero.jpg}\" width=\"${4:720}\" alt=\"${5:Descriptive image text}\" border=\"0\" class=\"fluid-image\" style=\"display:block; width:100%; max-width:${4:720}px; height:auto;\" />",
+      "</a>"
+    ],
+    "description": "Insert a clickable fluid image."
+  },
+  "Email Fixed Image": {
+    "prefix": "email-image-fixed",
+    "body": [
+      "<img src=\"${1:images/icon.png}\" width=\"${2:48}\" height=\"${3:48}\" alt=\"${4:Descriptive image text}\" border=\"0\" style=\"display:block; width:${2:48}px; height:${3:48}px;\" />"
+    ],
+    "description": "Insert a fixed-size image such as an icon or logo."
+  }
+}

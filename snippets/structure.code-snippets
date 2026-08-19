@@ -1,0 +1,60 @@
+{
+  "Email Table": {
+    "prefix": "email-table",
+    "body": [
+      "<table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">",
+      "  <tr>",
+      "    <td align=\"left\" valign=\"top\">",
+      "      $0",
+      "    </td>",
+      "  </tr>",
+      "</table>"
+    ],
+    "description": "Insert a presentation table for email layout."
+  },
+  "Email Padded Section": {
+    "prefix": "email-section-padded",
+    "body": [
+      "<tr>",
+      "  <td align=\"left\" valign=\"top\" class=\"mobile-padding\" style=\"padding:${1:20}px ${2:40}px;\">",
+      "    $0",
+      "  </td>",
+      "</tr>"
+    ],
+    "description": "Insert a padded section that uses mobile-padding on small screens."
+  },
+  "Email Vertical Spacer": {
+    "prefix": "email-spacer",
+    "body": [
+      "<tr>",
+      "  <td height=\"${1:20}\" style=\"height:${1:20}px; font-size:0; line-height:0;\">&nbsp;</td>",
+      "</tr>"
+    ],
+    "description": "Insert a vertical spacer row."
+  },
+  "Email Divider": {
+    "prefix": "email-divider",
+    "body": [
+      "<tr>",
+      "  <td height=\"1\" style=\"height:1px; font-size:0; line-height:1px; background-color:${1:#000000};\">&nbsp;</td>",
+      "</tr>"
+    ],
+    "description": "Insert a one-pixel divider."
+  },
+  "Email Two Columns": {
+    "prefix": "email-columns-2",
+    "body": [
+      "<table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">",
+      "  <tr>",
+      "    <td width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\">",
+      "      ${1:Column 1}",
+      "    </td>",
+      "    <td width=\"50%\" class=\"mobile-stack\" align=\"left\" valign=\"top\">",
+      "      ${2:Column 2}",
+      "    </td>",
+      "  </tr>",
+      "</table>"
+    ],
+    "description": "Insert a basic 50/50 two-column layout that stacks on mobile."
+  }
+}
