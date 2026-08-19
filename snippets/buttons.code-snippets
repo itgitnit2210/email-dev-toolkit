@@ -1,6 +1,6 @@
 {
   "Email Simple Button": {
-    "prefix": "email-button-simple",
+    "prefix": ["email-button", "email-button-simple"],
     "body": [
       "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" align=\"center\">",
       "  <tr>",
@@ -10,6 +10,6 @@
       "  </tr>",
       "</table>"
     ],
-    "description": "Insert a simple HTML button. Use Email Dev: Insert Button for configurable Outlook VML fallback."
+    "description": "Insert a simple HTML email button. Use Email Dev: Insert Button for configurable Outlook fallback."
   }
 }
