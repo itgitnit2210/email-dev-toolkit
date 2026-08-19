@@ -1,6 +1,6 @@
 {
   "Email Fluid Image": {
-    "prefix": "email-image-fluid",
+    "prefix": ["email-image", "email-image-fluid"],
     "body": [
       "<img src=\"${1:images/hero.jpg}\" width=\"${2:720}\" alt=\"${3:Descriptive image text}\" border=\"0\" class=\"fluid-image\" style=\"display:block; width:100%; max-width:${2:720}px; height:auto;\" />"
     ],
