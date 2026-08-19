@@ -1,7 +1,7 @@
 {
   "name": "email-dev-toolkit",
   "displayName": "Email Dev Toolkit",
-  "description": "General-purpose snippets, generators, and validation utilities for robust responsive HTML email development.",
+  "description": "Write responsive HTML emails faster with quick snippets, configurable generators, Outlook fallbacks, and built in validation.",
   "version": "0.3.0",
   "publisher": "nikhilthakurdev",
   "author": "Nikhil Thakur",
