@@ -2,6 +2,39 @@
 
 A general-purpose VS Code extension for responsive HTML email development.
 
+## Fastest workflow: type `email-`
+
+Open an HTML file and type:
+
+```text
+email-
+```
+
+VS Code IntelliSense will show the available email-development snippets. Select one and press `Enter` or `Tab`.
+
+Common quick inserts:
+
+- `email-template` — complete responsive email shell generated from your current extension settings
+- `email-section` — padded email section
+- `email-table` — presentation table
+- `email-text` — email-safe text row
+- `email-link` — styled link
+- `email-image` — fluid responsive image
+- `email-image-link` — clickable fluid image
+- `email-button` — simple HTML email button
+- `email-columns` — 50/50 responsive columns
+- `email-columns-6040` — 60/40 responsive columns
+- `email-columns-4060` — 40/60 responsive columns
+- `email-columns-reverse` — 50/50 columns that reverse stack order on mobile
+- `email-divider` — divider row
+- `email-spacer` — vertical spacer
+- `email-bullet` — table-based bullet row
+- `email-preheader` — hidden preview text
+- `email-mobile-hide` — mobile visibility helper
+- `email-mobile-show` — mobile-only visibility helper
+
+The static `email-` snippets are optimized for speed. The Command Palette workflows remain available when you need configurable values such as custom column ratios, gaps, button dimensions, or image behavior.
+
 ## Core responsive model
 
 - Desktop uses a configurable maximum design width. Default: `720px`.
@@ -11,6 +44,8 @@ A general-purpose VS Code extension for responsive HTML email development.
 - Images can scale fluidly.
 - Columns can stack or reverse-stack on mobile.
 - Outlook fallbacks are optional and generated only where needed.
+
+Choosing a `720px` desktop width does not force a `360px` production mobile width. At the configured mobile breakpoint, the generated `.email-container` becomes `width: 100% !important`, so it follows the available device width.
 
 ## Commands
 
@@ -23,20 +58,7 @@ Open the Command Palette and search for `Email Dev`:
 - **Email Dev: Insert Responsive Image**
 - **Email Dev: Validate Current Email**
 
-## Snippets
-
-Type `email-` in an HTML file. Included snippets cover:
-
-- presentation tables
-- padded sections
-- spacers and dividers
-- two-column layouts
-- text, links, bullets, preheaders, superscript
-- fluid, linked, and fixed images
-- simple buttons
-- mobile visibility helpers
-
-Dynamic structures such as full templates, configurable buttons, responsive images, and columns are generated through commands rather than duplicated as width-specific snippets.
+Use commands when you need interactive configuration. For everyday markup insertion, type `email-` directly in an HTML file.
 
 ## Settings
 
@@ -87,6 +109,7 @@ The package script runs syntax checks, snippet validation, terminology checks, a
 ```text
 src/
   commands/      Command Palette workflows
+  completions/   Dynamic HTML IntelliSense completions
   generators/    Dynamic email markup generators
   config/        Defaults, presets, and settings access
   email/         Shared CSS, reset, Outlook, and markup helpers
