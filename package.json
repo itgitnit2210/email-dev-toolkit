@@ -2,27 +2,20 @@
   "name": "email-dev-toolkit",
   "displayName": "Email Dev Toolkit",
   "description": "General-purpose snippets, generators, and validation utilities for robust responsive HTML email development.",
-  "version": "0.2.0",
-
+  "version": "0.3.0",
   "publisher": "nikhilthakurdev",
   "author": "Nikhil Thakur",
   "icon": "images/icon.png",
-
   "license": "SEE LICENSE IN LICENSE",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/itgitnit2210/email-dev-toolkit.git"
   },
-
   "homepage": "https://github.com/itgitnit2210/email-dev-toolkit#readme",
-
   "bugs": {
     "url": "https://github.com/itgitnit2210/email-dev-toolkit/issues"
   },
-
   "pricing": "Free",
-
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -44,6 +37,7 @@
   ],
   "main": "./src/extension.js",
   "activationEvents": [
+    "onLanguage:html",
     "onCommand:emailDev.insertResponsiveTemplate",
     "onCommand:emailDev.configureLayout",
     "onCommand:emailDev.insertColumns",
