@@ -1,66 +1,217 @@
 # Email Dev Toolkit
 
-A general-purpose VS Code extension for responsive HTML email development.
+Build responsive HTML emails faster inside VS Code.
 
-## Fastest workflow: type `email-`
+Open an HTML file, type `email-`, choose what you need, and keep coding. The extension gives you reusable email markup, responsive layouts, Outlook friendly fallbacks, and a quick validation check before handoff.
 
-Open an HTML file and type:
+## Start in a few seconds
+
+1. Create or open an `.html` file.
+2. Type `email-`.
+3. Choose a suggestion from IntelliSense.
+4. Press `Enter` or `Tab`.
+
+If suggestions do not open automatically, press `Control + Space`.
+
+For a brand new email, start with:
 
 ```text
-email-
+email-template
 ```
 
-VS Code IntelliSense will show the available email-development snippets. Select one and press `Enter` or `Tab`.
+That inserts the complete responsive email shell using your current Email Dev Toolkit settings.
 
-Common quick inserts:
+## A simple workflow
 
-- `email-template` — complete responsive email shell generated from your current extension settings
-- `email-section` — padded email section
-- `email-table` — presentation table
-- `email-text` — email-safe text row
-- `email-link` — styled link
-- `email-image` — fluid responsive image
-- `email-image-link` — clickable fluid image
-- `email-button` — simple HTML email button
-- `email-columns` — 50/50 responsive columns
-- `email-columns-6040` — 60/40 responsive columns
-- `email-columns-4060` — 40/60 responsive columns
-- `email-columns-reverse` — 50/50 columns that reverse stack order on mobile
-- `email-divider` — divider row
-- `email-spacer` — vertical spacer
-- `email-bullet` — table-based bullet row
-- `email-preheader` — hidden preview text
-- `email-mobile-hide` — mobile visibility helper
-- `email-mobile-show` — mobile-only visibility helper
+For most emails, you can work like this:
 
-The static `email-` snippets are optimized for speed. The Command Palette workflows remain available when you need configurable values such as custom column ratios, gaps, button dimensions, or image behavior.
+```text
+email-template
 
-## Core responsive model
+email-image
 
-- Desktop uses a configurable maximum design width. Default: `720px`.
-- Production mobile width is fluid: `100%`.
-- Mobile preview width is a reference value only. Default: `360px`.
-- Mobile inner spacing is controlled with horizontal padding. Default: `20px` per side.
-- Images can scale fluidly.
-- Columns can stack or reverse-stack on mobile.
-- Outlook fallbacks are optional and generated only where needed.
+email-text
 
-Choosing a `720px` desktop width does not force a `360px` production mobile width. At the configured mobile breakpoint, the generated `.email-container` becomes `width: 100% !important`, so it follows the available device width.
+email-button
 
-## Commands
+email-columns
 
-Open the Command Palette and search for `Email Dev`:
+email-divider
 
-- **Email Dev: Insert Responsive Email Template**
-- **Email Dev: Configure Layout**
-- **Email Dev: Insert Columns**
-- **Email Dev: Insert Button**
-- **Email Dev: Insert Responsive Image**
-- **Email Dev: Validate Current Email**
+email-text
+```
 
-Use commands when you need interactive configuration. For everyday markup insertion, type `email-` directly in an HTML file.
+You can mix the snippets in any order. They are normal HTML, so after insertion you can edit everything yourself.
+
+## What `email-template` gives you
+
+The template creates the base structure developers usually have to write again and again:
+
+- XHTML email document structure
+- Email reset styles
+- Responsive CSS
+- Hidden preheader text
+- Centered desktop container
+- Fluid mobile container
+- Mobile padding
+- Outlook support when enabled
+- A clear place to start adding content
+
+The default desktop width is `720px`.
+
+On smaller screens, the email does not stay `720px` and it does not become a fixed `360px` template. The container becomes fluid and uses the available screen width.
+
+```text
+Desktop
+Maximum email width: 720px
+
+Mobile
+Email width: 100% of the available screen
+```
+
+The default mobile breakpoint is `480px` and the default mobile padding is `20px` on each side.
+
+`360px` is only the mobile preview reference. It does not force the production email to be 360px wide.
+
+## Quick inserts
+
+Type `email-` and choose from the suggestions.
+
+**`email-template`**
+
+Complete responsive email shell using your current settings.
+
+**`email-section`**
+
+A padded content section.
+
+**`email-table`**
+
+A presentation table for email layout.
+
+**`email-text`**
+
+A text row with common email safe typography styles.
+
+**`email-link`**
+
+A styled link ready to edit.
+
+**`email-image`**
+
+A fluid image that can scale with the email container.
+
+**`email-image-link`**
+
+A clickable fluid image.
+
+**`email-button`**
+
+A quick HTML email button.
+
+**`email-columns`**
+
+Two responsive columns using a 50/50 layout.
+
+**`email-columns-6040`**
+
+Two responsive columns using a 60/40 layout.
+
+**`email-columns-4060`**
+
+Two responsive columns using a 40/60 layout.
+
+**`email-columns-reverse`**
+
+Two columns that keep the intended desktop order and reverse their stacking order on mobile.
+
+**`email-divider`**
+
+A divider row.
+
+**`email-spacer`**
+
+Vertical spacing without relying on margins.
+
+**`email-bullet`**
+
+A table based bullet row for predictable email rendering.
+
+**`email-preheader`**
+
+Hidden inbox preview text.
+
+**`email-mobile-hide`**
+
+Content that is visible on desktop and hidden on mobile.
+
+**`email-mobile-show`**
+
+Content that is hidden on desktop and shown on mobile.
+
+## Need more control?
+
+The snippets are the fastest option. Use the Command Palette when you need custom values.
+
+Press:
+
+```text
+Cmd + Shift + P
+```
+
+Then search for:
+
+```text
+Email Dev
+```
+
+Available commands:
+
+**Email Dev: Configure Layout**
+
+Set the desktop width, mobile reference width, padding, breakpoint, background, font stack, image folder, and Outlook fallback preference.
+
+**Email Dev: Insert Responsive Email Template**
+
+Insert the same responsive base template available through `email-template`.
+
+**Email Dev: Insert Columns**
+
+Create a custom column layout when the quick 50/50, 60/40, or 40/60 snippets are not enough. You can choose the number of columns, widths, gap, and mobile stacking behavior.
+
+**Email Dev: Insert Button**
+
+Create a configurable button with dimensions, colors, border, radius, alignment, and optional Outlook VML fallback.
+
+**Email Dev: Insert Responsive Image**
+
+Create a responsive image with configurable source, alt text, width, link, and responsive image behavior.
+
+**Email Dev: Validate Current Email**
+
+Run a quick check on the HTML file you are currently editing.
+
+## Validate before handoff
+
+Run:
+
+```text
+Email Dev: Validate Current Email
+```
+
+The validator currently checks for:
+
+- Images missing an `alt` attribute
+- Empty or placeholder links
+- A fixed pixel width on `.email-container` inside mobile CSS
+- Layout tables that may be missing `role="presentation"`
+- Three digit hex colors that may be unsafe for stricter email workflows
+
+This is a quick developer check, not a replacement for testing the final email in real email clients.
 
 ## Settings
+
+Default settings:
 
 ```json
 {
@@ -76,54 +227,10 @@ Use commands when you need interactive configuration. For everyday markup insert
 }
 ```
 
-`mobilePreviewWidth` does not set a fixed production width. Generated mobile CSS uses `width: 100% !important` for the email container.
+You can change these through **Email Dev: Configure Layout** or directly in VS Code settings.
 
-## Run locally
+## Good to know
 
-```bash
-npm install
-```
+Email Dev Toolkit is made for developers who write HTML emails by hand. It does not hide the generated code and it is not a drag and drop email builder.
 
-Open the project in VS Code and press `F5`. A new Extension Development Host window will open.
-
-## Validate the project
-
-```bash
-npm run check
-npm test
-```
-
-## Build a VSIX
-
-No global package installation is required.
-
-```bash
-npm install
-npm run package
-```
-
-The package script runs syntax checks, snippet validation, terminology checks, automated tests, and then packages the extension with the locally installed packaging tool.
-
-## Project structure
-
-```text
-src/
-  commands/      Command Palette workflows
-  completions/   Dynamic HTML IntelliSense completions
-  generators/    Dynamic email markup generators
-  config/        Defaults, presets, and settings access
-  email/         Shared CSS, reset, Outlook, and markup helpers
-  utils/         Editor and validation helpers
-snippets/        Static reusable HTML snippets
-scripts/         Project quality checks
-test/            Automated tests
-```
-
-## Design principles
-
-1. Semantic class names instead of dimension-based class names.
-2. Fixed or maximum desktop design width, fluid production mobile width.
-3. Padding for mobile gutters instead of a fixed inner mobile table.
-4. Static patterns stay snippets; configurable patterns use generators.
-5. Component-specific widths, such as buttons and icons, do not automatically scale when the email container width changes.
-6. Generated markup remains platform-neutral and intended for general email development.
+The goal is simple: remove repetitive setup, make common email patterns faster to write, and keep the final HTML fully under your control.
