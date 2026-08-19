@@ -6,6 +6,7 @@
 
   "publisher": "nikhilthakurdev",
   "author": "Nikhil Thakur",
+  "icon": "images/icon.png",
 
   "license": "SEE LICENSE IN LICENSE",
 
@@ -206,6 +207,7 @@
   "files": [
     "src/**",
     "snippets/**",
+    "images/**",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
